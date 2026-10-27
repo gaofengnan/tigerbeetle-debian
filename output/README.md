@@ -1,5 +1,7 @@
 # tigerbeetle
 
+> Fork of [dariogriffo/tigerbeetle-debian](https://github.com/dariogriffo/tigerbeetle-debian) (MIT); the original packaging is by Dario Griffo. Served at [deb.gaofn.xyz](https://deb.gaofn.xyz) for Debian 12 (bookworm) and 13 (trixie).
+
 *TigerBeetle is the financial transactions database designed for mission critical safety and performance to power the next 30 years of [OLTP](https://docs.tigerbeetle.com/concepts/oltp).*
 
 ## Documentation

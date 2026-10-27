@@ -22,7 +22,7 @@ echo "Creating the source package for tigerbeetle ${TIGERBEETLE_VERSION}-${BUILD
 # archive download is byte-identical next time. Reuse the earlier release's copy.
 if [ ! -f "$ORIG_TARBALL" ]; then
     for ((b = BUILD_VERSION - 1; b >= 1; b--)); do
-        if wget -q "https://github.com/dariogriffo/tigerbeetle-debian/releases/download/${TIGERBEETLE_VERSION}%2B${b}/${ORIG_TARBALL}" -O "$ORIG_TARBALL"; then
+        if wget -q "https://github.com/gaofengnan/tigerbeetle-debian/releases/download/${TIGERBEETLE_VERSION}%2B${b}/${ORIG_TARBALL}" -O "$ORIG_TARBALL"; then
             echo "  Reusing $ORIG_TARBALL from release ${TIGERBEETLE_VERSION}+${b}"
             break
         fi
@@ -40,7 +40,7 @@ else
 fi
 
 build_source_package() {
-    local FULL_VERSION="${TIGERBEETLE_VERSION}-${BUILD_VERSION}~griffo"
+    local FULL_VERSION="${TIGERBEETLE_VERSION}-${BUILD_VERSION}~gaofn"
 
     echo "  Building source package ${FULL_VERSION}..."
 
@@ -58,7 +58,7 @@ tigerbeetle (${FULL_VERSION}) stable; urgency=medium
 
   * New upstream release ${TIGERBEETLE_VERSION}.
 
- -- Dario Griffo <dariogriffo@gmail.com>  $(date -R)
+ -- Fengnan Gao <gao.fengnan@gmail.com>  $(date -R)
 EOF
 
     # Build source package (.dsc + .debian.tar.xz); reuses existing .orig.tar.gz
